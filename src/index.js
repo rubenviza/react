@@ -6,32 +6,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const user = {
-  firstName: 'Raul',
-  lastName: 'Palacios',
-  avatar: 'https://koms.korloy.com/resource/lib/ace-admin/assets/avatars/profile-pic.jpg'
-}
+import Card from './components/Card'
+import Intro from './components/Intro'
 
-function getName (user){
-  return `${user.firstName} ${user.lastName}`
-}
+import 'bootstrap/dist/css/bootstrap.css'
+import exerciseImg from './images/exercise2.png'
 
-function getGreeting (user){
-  if(user){
-    return <h1>Hola {getName(user)}</h1>
-  }
-  return <h1>Hola extraño</h1>
-}
-
-const name = 'Roberto'
-const element = ( <>
-            <h1>Hola {name}</h1>
-            <h1>Hola {getName(user)}</h1>
-            <div>{getGreeting(user)}</div>
-            <img src={user.avatar} />
-            </>
-)
 const container = document.getElementById('root')
 
-// ReactDOM.render(__QUE__, __DONDE__)
-ReactDOM.render(element, container)
+//ReactDOM.render(<Intro />, container)
+ReactDOM.render(<Card 
+                    title="Technique Guides"
+                    description="Learn amazing street workout and calisthenics"
+                    img={exerciseImg}
+                    leftColor="#A74CF2"
+                    rightColor="#617BFB"
+                />, container)
