@@ -1,21 +1,19 @@
 
-// Function component
+// Componente funcional
 
 import React from "react"
 import './styles/Welcome.css'
-import ProfilePic from '../images/profile-pic.jpg'
 
-function Welcome ({userX}){
+function Welcome (props){
     let matricula = "Matricula activa";
 
     return (
         <div className="container">
             <div className="Fitness-User-Info">
-                <h1>Hello {userX.username}</h1>
-                <p>{matricula}</p>
-                <p>Nombre completo: {getName(userX)}</p>
-                <div>{getGreeting(userX)}</div>
-                <img src={ProfilePic} />           {/* <img src={userX.avatar} /> */}
+                <h3>Hello {props.userX.username}</h3>
+                <p>{matricula}. Nombre completo: {getName(props.userX)}</p>
+                <div>{getGreeting(props.userX)}</div>
+                <img src={props.userX.avatar2} />           {/* <img src={userX.avatar} /> */}
                 <p>Let's work out to get someone gains!</p>
             </div>    
         </div>
