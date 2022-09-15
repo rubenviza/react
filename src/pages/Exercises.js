@@ -2,14 +2,14 @@
 // Pagina (componente que contiene otros componentes)
 
 import React from 'react'
-import Card from '../components/Card'
 import Welcome from '../components/Welcome'
 import ProfilePic from '../images/profile-pic.jpg'
 import ExerciseList from '../components/ExerciseList'
 import BtnPlus from '../components/BtnPlus'
 
 class Exercises extends React.Component {
-
+    
+    // Se puede utilizar estados inicializandolos fuera del constructor, como esta variable user
     user = {
         username: 'rpalacios12',
         firstName: 'Raul',
@@ -53,7 +53,7 @@ class Exercises extends React.Component {
                     userX={this.user}
                 />
                <ExerciseList
-                    exercises={this.state.data}
+                    theexercises={this.state.data}
                />
                <BtnPlus />
             </div>

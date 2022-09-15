@@ -3,10 +3,18 @@ import Card from './Card'
 import './styles/Card.css'
 import exerciseImg from '../images/exercise2.png'
 
+/*
+// Tambien es posible usar "arrow function" de js y destructurar props a solo theexercises
+const ExerciseList = ({theexercises}) => (
+    <div>
+    { theexercises.map((exercise) =>{ ....
+)
+*/
+
 function ExerciseList (props){
     return (
         <div>
-            { props.exercises.map((exercise) =>{
+            { props.theexercises.map((exercise) =>{
                     return (  
                         <Card 
                             key={exercise.id}         // para corregir Warning que obliga a tener una prop "key" con valor unico

@@ -9,7 +9,7 @@ class Card extends React.Component {
     
     constructor(props){     // Opcional. Para iniciar estados
         super(props)
-        this.state = {  // los estados siempre definirlos en el constructor.
+        this.state = {  // Se recomienda definir los estados siempre en el constructor.
            figura: 'https://gcdn.thunderstore.io/live/repository/icons/Smoothbrain-Starvation-1.0.0.png.128x128_q95.png'         
            // figura: exerciseImg
         }
