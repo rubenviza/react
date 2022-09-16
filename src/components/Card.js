@@ -25,7 +25,7 @@ class Card extends React.Component {
     }
 
     render (){    // dentro de render() no se deben modificar los estados.
-        const { id, title:titulo, description, img, leftColor, rightColor } = this.props  
+        const { llave, title:titulo, description, img, leftColor, rightColor } = this.props  
       
         return (
             <div className="card mx-auto Fitness-Card"
@@ -36,9 +36,12 @@ class Card extends React.Component {
                <div className="card-body">
                   <div className="row center">
                      <div className="col-6">
-                        <img src={this.state.figura} className="float-right" />       {/* <img src={img} .... */}        
+                        {/*<img src={img} className="float-right" /> */}      {/* <img src={this.state.figura} /> */} 
+                       {/* <img src={img} className="float-right" />   */}     
+                        <img src={this.state.figura} />
                      </div>
                      <div className="col-6 Fitness-Card-Info">
+                        {/* <h1>{llave}</h1> */}
                         <h1>{titulo}</h1>
                          <p>{description}</p>
                      </div>

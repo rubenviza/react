@@ -9,7 +9,7 @@ import BtnPlus from '../components/BtnPlus'
 
 class Exercises extends React.Component {
     
-    // Se puede utilizar estados inicializandolos fuera del constructor, como esta variable user
+    // Se pueden utilizar los estados (state) fuera del constructor, como esta variable user
     user = {
         username: 'rpalacios12',
         firstName: 'Raul',

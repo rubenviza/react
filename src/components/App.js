@@ -15,8 +15,8 @@ function App () {
     return (
         <BrowserRouter>
             <Routes>
-                <Route exact path="/exercise" element={<Exercises />}/>
-                <Route exact path="/exercise/new" element={<ExerciseNew />}/>
+                <Route exact path="/react" element={<Exercises />}/>
+                <Route exact path="/react/new" element={<ExerciseNew />}/>
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
