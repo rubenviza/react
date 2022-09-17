@@ -36,9 +36,8 @@ class Card extends React.Component {
                <div className="card-body">
                   <div className="row center">
                      <div className="col-6">
-                        {/*<img src={img} className="float-right" /> */}      {/* <img src={this.state.figura} /> */} 
-                       {/* <img src={img} className="float-right" />   */}     
-                        <img src={this.state.figura} />
+                        {/* El codigo comentado es para probar cambiar el estado "figura" con componentDidMount() */}
+                        <img src={img} className="float-right" />      {/* <img src={this.state.figura} className="float-right" /> */}                              
                      </div>
                      <div className="col-6 Fitness-Card-Info">
                         {/* <h1>{llave}</h1> */}
