@@ -1,19 +1,13 @@
 import React from 'react'
 
 class ExerciseForm extends React.Component {
-      
-    handleSubmit = (e) => {
-        e.preventDefault()   // para evitar que haga reload a la pagina
-        // console.log (this.state)   // ya no funciona cuando state pasa a padre
-        console.log (this.props.form)
-    } 
     
     render (){
-        const { onCambio, form } = this.props
+        const { onCambio, form, onSubmit } = this.props
         return (
             <div className="container">
             <form 
-                 onSubmit={this.handleSubmit}
+                 onSubmit={onSubmit}
             >
                 <div className="form-group">
                     <input 

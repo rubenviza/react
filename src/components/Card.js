@@ -4,6 +4,7 @@
 import React from 'react'
 import exerciseImg from '../images/exercise2.png'
 import circlesImg from '../images/circles.png'
+import emptyImg from '../images/empty.png'
 
 class Card extends React.Component {
     
@@ -30,14 +31,14 @@ class Card extends React.Component {
         return (
             <div className="card mx-auto Fitness-Card"
             style={{
-                backgroundImage:`url(${circlesImg}), linear-gradient(to right, ${leftColor}, ${rightColor})`
+                backgroundImage: `url(${circlesImg}), linear-gradient(to right, ${leftColor || '#56CCF2'} , ${rightColor || '#2F80ED'}) `   // Los OR (||) para colocar colores por defecto 
             }}
             >
                <div className="card-body">
                   <div className="row center">
                      <div className="col-6">
                         {/* El codigo comentado es para probar cambiar el estado "figura" con componentDidMount() */}
-                        <img src={img} className="float-right" />      {/* <img src={this.state.figura} className="float-right" /> */}                              
+                        <img src={img || emptyImg} className="float-right" />      {/* <img src={this.state.figura} className="float-right" /> */}                              
                      </div>
                      <div className="col-6 Fitness-Card-Info">
                         {/* <h1>{llave}</h1> */}
