@@ -16,8 +16,8 @@ class Card extends React.Component {
         }
     }
 
-    componentDidMount(){        // Opcional. Se ejecuta despues de montar el componente. Aqui llamar a APIs, suscribir eventos, modificar estados.
-        // ejemplo para modificar un estado.
+    componentDidMount(){        // Opcional. Se ejecuta despues de montar el componente. Aqui llamar a APIs, suscribir eventos, modificar estados. FUNCTION DEPRECATED, USE HOOKS INSTEAD
+        // ejemplo para modificar un estado. 
         setTimeout(() => {       
             this.setState({
                 figura: this.props.img     // los estados a diferencia de las props son modificables.

@@ -8,6 +8,8 @@ import ExerciseList from '../components/ExerciseList'
 import BtnPlus from '../components/BtnPlus'
 import Loading from '../components/Loading'
 import FatalError from './500'
+import ExampleHooks from '../components/ExampleHooks'
+import urlAPI from '../config'
 
 class Exercises extends React.Component {
     
@@ -32,7 +34,7 @@ class Exercises extends React.Component {
 
     fetchExercises = async () => {
         try {
-            let res = await fetch('http://localhost:8000/api/exercises')
+            let res = await fetch(`${urlAPI}/exercises`)
             let data = await res.json()
             this.setState({
                 data, 
@@ -53,7 +55,8 @@ class Exercises extends React.Component {
         if (this.state.error)
             return <FatalError />
         return (
-            <div>
+            <div className='container'>
+                <ExampleHooks />
                 <Welcome
                     userX={this.user}
                 />

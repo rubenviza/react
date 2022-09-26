@@ -8,15 +8,17 @@ function Welcome (props){
     let matricula = "Matricula activa";
 
     return (
-        <div className="container">
+        <React.Fragment>        {/*Tambien asi <> </> Para no crear div innecesario*/}
             <div className="Fitness-User-Info">
                 <h3>Hello {props.userX.username}</h3>
-                <p>{matricula}. Nombre completo: {getName(props.userX)}</p>
-                <div>{getGreeting(props.userX)}</div>
+                <p>{matricula}. Nombre completo: {getName(props.userX)}</p>                
                 <img src={props.userX.avatar2} />           {/* <img src={userX.avatar} /> */}
                 <p>Let's work out to get someone gains!</p>
-            </div>    
-        </div>
+            </div> 
+            <div className="container-greeting mx-auto">
+                <h4>{getGreeting(props.userX)}</h4>
+            </div>
+        </React.Fragment>   
     )
 }
 

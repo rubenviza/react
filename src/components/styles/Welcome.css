@@ -1,6 +1,5 @@
 .Fitness-User-Info {
-    margin-top: 25px;
-    margin-bottom: 25px;    
+    margin-top: 25px;  
     margin-left: 100px;
 }
 .Fitness-User-Info p{
@@ -9,4 +8,10 @@
 }
 .Fitness-User-Info img{
     height: 70px;
+}
+.container-greeting {    
+    margin-top: 10px;
+    margin-bottom: 30px; 
+    width: max-content;  
+    height: auto;   
 }

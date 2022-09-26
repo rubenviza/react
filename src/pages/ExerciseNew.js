@@ -1,6 +1,10 @@
 import React from 'react'
 import ExerciseForm from '../components/ExerciseForm'
 import Card from '../components/Card'
+import Loading from '../components/Loading'
+import withNavigateHook from '../components/withNavigateHook'
+import FatalError from './500'
+import urlAPI from '../config'
 
 class ExerciseNew extends React.Component {
 
@@ -12,7 +16,9 @@ class ExerciseNew extends React.Component {
             img: '',
             leftColor: '',
             rightColor: ''
-        }
+        },
+        loading: false,
+        error: null
     }
     handleChange = (e) => {  // e es el evento
         //console.log(`${e.target.name}: ${e.target.value}`)
@@ -33,6 +39,9 @@ class ExerciseNew extends React.Component {
     }
           
     handleSubmit = async (e) => {
+        this.setState({
+            loading: true
+        })
         e.preventDefault()   // para evitar que haga reload a la pagina
        // console.log (this.state)
        try {
@@ -44,16 +53,27 @@ class ExerciseNew extends React.Component {
                 },
                 body: JSON.stringify(this.state.form)
             }
-            let res = await fetch('http://localhost:8000/api/exercises', config)
+            let res = await fetch(`${urlAPI}/exercises`, config) 
             let json = await res.json()  // Nos indica la respuesta json del servidor 
-            console.log (json)
+            console.log (json) 
+            this.setState({
+                loading: false
+            })            
+            this.props.navigation('/react')   // para redireccionar a pagina '/react'
 
        } catch (error){
-
+            this.setState({
+                loading: false,
+                error
+            })
        }
     } 
 
     render (){
+        if (this.state.loading)
+            return <Loading />            
+        if (this.state.error)
+            return <FatalError />
         return (            
             <div className='row'>
                 <div className='col-sm'>
@@ -70,4 +90,4 @@ class ExerciseNew extends React.Component {
         )
     }
 }
-export default ExerciseNew
+export default withNavigateHook(ExerciseNew)   // para redireccionar

@@ -19,11 +19,16 @@ function ExerciseList (props){
                         <Card 
                             key={exercise.id}        // para corregir Warning que obliga a tener una prop "key" con valor unico
                             llave={exercise.id}      // no se puede acceder a prop "key" (en componente que renderizará (Card)) por eso se envía otro con otro nombre
-                            title={exercise.title}
+                            
+                            /*title={exercise.title}
                             description={exercise.description}
                             img={exercise.img}         // img={exerciseImg} 
                             leftColor={exercise.leftColor}
                             rightColor={exercise.rightColor}
+                            */
+
+                            // forma compacta para enviar todos los parametros de elementos en theexercises
+                            {...exercise}
                         />
                     )
             })}
